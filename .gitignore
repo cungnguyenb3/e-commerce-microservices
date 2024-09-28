@@ -8,9 +8,16 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/aws.xml
+.idea/git_toolbox_blame.xml
 *.iws
 *.iml
 *.ipr
 
 ### VS Code ###
 .vscode/
+
+### Docker Service Data ###
+inventory-service/mysql
+order-service/mysql
+product-service/data
