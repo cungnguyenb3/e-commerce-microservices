@@ -5,6 +5,7 @@ import com.kevin.microservices.order.dto.OrderRequest;
 import com.kevin.microservices.order.event.OrderPlacedEvent;
 import com.kevin.microservices.order.model.Order;
 import com.kevin.microservices.order.repository.OrderRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -37,12 +38,11 @@ public class OrderService {
             orderPlacedEvent.setEmail(orderRequest.userDetails().email());
             orderPlacedEvent.setFirstName(orderRequest.userDetails().firstName());
             orderPlacedEvent.setLastName(orderRequest.userDetails().lastName());
-            System.out.println(orderPlacedEvent);
             log.info("Start - Sending OrderPlacedEvent {} to Kafka topic order-placed", orderPlacedEvent);
             kafkaTemplate.send("order-placed", orderPlacedEvent);
             log.info("End - Sending OrderPlacedEvent {} to Kafka topic order-placed", orderPlacedEvent);
         } else {
-            throw new RuntimeException("Product with " + orderRequest.skuCode() + " is not in stock");
+            throw new EntityNotFoundException("Product with " + orderRequest.skuCode() + " is not in stock");
         }
     }
 }
