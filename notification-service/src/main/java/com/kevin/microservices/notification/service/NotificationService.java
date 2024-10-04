@@ -42,7 +42,7 @@ public class NotificationService {
             log.info("Order notification sent successfully!!");
         } catch (MailSendException e) {
             log.error("Exception occurred when sending mail", e);
-            throw new RuntimeException("Exception occurred when sending mail", e);
+            throw new MailSendException("Exception occurred when sending mail", e);
         }
     }
 }
