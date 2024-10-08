@@ -1,6 +1,5 @@
 package com.kevin.gateway.config;
 
-import org.apache.tomcat.util.file.ConfigurationSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -16,7 +15,7 @@ import java.util.List;
 public class SecurityConfig {
 
     private final String[] freeResourceUrls = {"/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**",
-    "/swagger-resources/**", "/api-docs/**", "/aggregate/**"};
+    "/swagger-resources/**", "/api-docs/**", "/aggregate/**", "/actuator/prometheus"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
