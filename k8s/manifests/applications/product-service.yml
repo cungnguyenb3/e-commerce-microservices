@@ -15,13 +15,13 @@ spec:
       containers:
         - name: product-service
           image: cungnvb3/new-product-service:latest
-          resources:
-            requests:
-              memory: "512Mi"   # Yêu cầu bộ nhớ tối thiểu
-              cpu: "250m"       # Yêu cầu CPU tối thiểu
-            limits:
-              memory: "1Gi"     # Giới hạn bộ nhớ tối đa
-              cpu: "500m"       # Giới hạn CPU tối đa
+#          resources:
+#            requests:
+#              memory: "512Mi"   # Yêu cầu bộ nhớ tối thiểu
+#              cpu: "250m"       # Yêu cầu CPU tối thiểu
+#            limits:
+#              memory: "1Gi"     # Giới hạn bộ nhớ tối đa
+#              cpu: "500m"       # Giới hạn CPU tối đa
           env:
             - name: SPRING_DATA_MONGODB_URI
               valueFrom:
