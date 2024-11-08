@@ -16,6 +16,16 @@ spec:
         - name: inventory-service
           image: cungnvb3/new-inventory-service:latest
           env:
+            - name: SPRING_KAFKA_BOOTSTRAP-SERVERS
+              valueFrom:
+                configMapKeyRef:
+                  key: SPRING_KAFKA_BOOTSTRAP-SERVERS
+                  name: common-config
+            - name: SPRING_KAFKA_CONSUMER_PROPERTIES_SCHEMA_REGISTRY_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: SPRING_KAFKA_CONSUMER_PROPERTIES_SCHEMA_REGISTRY_URL
+                  name: notification-service-config
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:
