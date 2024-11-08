@@ -1,4 +1,4 @@
-package com.kevin.inventory.model;
+package com.kevin.microservices.inventory.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

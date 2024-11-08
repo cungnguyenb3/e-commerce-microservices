@@ -21,7 +21,8 @@ export class AddProductComponent {
       skuCode: ['', [Validators.required]],
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      price: [0, [Validators.required]]
+      price: [0, [Validators.required]],
+      quantity: [0, [Validators.required]]
     })
   }
 
@@ -31,7 +32,8 @@ export class AddProductComponent {
         skuCode: this.addProductForm.get('skuCode')?.value,
         name: this.addProductForm.get('name')?.value,
         description: this.addProductForm.get('description')?.value,
-        price: this.addProductForm.get('price')?.value
+        price: this.addProductForm.get('price')?.value,
+        quantity: this.addProductForm.get('quantity')?.value
       }
       this.productService.createProduct(product).subscribe(product => {
         this.productCreated = true;
@@ -56,5 +58,9 @@ export class AddProductComponent {
 
   get price() {
     return this.addProductForm.get('price');
+  }
+
+  get quantity() {
+    return this.addProductForm.get('quantity');
   }
 }

@@ -12,10 +12,10 @@ import org.springframework.web.servlet.function.ServerResponse;
 
 import java.net.URI;
 
-import static com.kevin.gateway.utils.Constants.ProductService;
-import static com.kevin.gateway.utils.Constants.OrderService;
-import static com.kevin.gateway.utils.Constants.InventoryService;
-import static com.kevin.gateway.utils.Constants.RouteCommon;
+import static com.kevin.gateway.util.Constants.ProductService;
+import static com.kevin.gateway.util.Constants.OrderService;
+import static com.kevin.gateway.util.Constants.InventoryService;
+import static com.kevin.gateway.util.Constants.RouteCommon;
 import static org.springframework.cloud.gateway.server.mvc.filter.FilterFunctions.setPath;
 import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
 

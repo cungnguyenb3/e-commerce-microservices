@@ -3,7 +3,7 @@ services:
     container_name: keycloak-mysql
     image: mysql:8
     volumes:
-      - ./volume-data/mysql_keycloak_data:/var/lib/mysql
+      - ./docker/keycloak-mysql/volume-data/mysql_keycloak_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: keycloak

@@ -59,6 +59,20 @@
       </div>
     </div>
 
+    <div class="mb-4">
+      <label class="block text-gray-700" for="quantity">Quantity</label>
+      <input
+        type="number"
+        id="quantity"
+        formControlName="quantity"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="quantity?.invalid && (quantity?.dirty || quantity?.touched)" class="text-red-500">
+        <div *ngIf="quantity?.errors?.['required']">Quantity is required.</div>
+        <div *ngIf="quantity?.errors?.['min']">Quantity must be greater than 0.</div>
+      </div>
+    </div>
+
     <button
       type="submit"
       class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"

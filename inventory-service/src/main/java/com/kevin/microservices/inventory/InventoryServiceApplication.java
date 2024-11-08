@@ -1,4 +1,4 @@
-package com.kevin.inventory;
+package com.kevin.microservices.inventory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
