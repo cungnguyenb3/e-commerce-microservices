@@ -1,4 +1,4 @@
-package com.kevin.gateway.utils;
+package com.kevin.gateway.util;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

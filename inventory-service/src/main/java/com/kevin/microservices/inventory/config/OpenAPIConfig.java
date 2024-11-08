@@ -1,4 +1,4 @@
-package com.kevin.inventory.config;
+package com.kevin.microservices.inventory.config;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;

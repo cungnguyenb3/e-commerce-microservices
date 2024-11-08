@@ -1,0 +1,9 @@
+{
+    "type": "record",
+    "name": "InventoryUpdatedEvent",
+    "namespace": "com.kevin.microservices.product.event",
+    "fields": [
+        { "name": "skuCode", "type": "string" },
+        { "name": "quantity", "type": "string" }
+    ]
+}
