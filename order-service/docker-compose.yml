@@ -7,7 +7,7 @@ services:
     ports:
       - "3326:3306"
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./docker/mysql-data:/var/lib/mysql
       - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   zookeeper:
