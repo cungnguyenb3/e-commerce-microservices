@@ -10,6 +10,7 @@ target/
 .idea/libraries/
 .idea/aws.xml
 .idea/git_toolbox_blame.xml
+.idea/dataSources.xml
 *.iws
 *.iml
 *.ipr
