@@ -33,4 +33,7 @@ build/
 .vscode/
 
 ### DOCKER ###
-docker/
+docker/grafana
+docker/keycloak-mysql
+docker/tempo/tempo-data
+
