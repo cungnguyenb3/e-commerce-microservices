@@ -43,10 +43,10 @@ spec:
                 configMapKeyRef:
                   key: ORDER_SERVICE_URL
                   name: common-config
-            - name: INVENTORY_SERVICE_URL
+            - name: INVENTORY_URL
               valueFrom:
                 configMapKeyRef:
-                  key: INVENTORY_SERVICE_URL
+                  key: INVENTORY_URL
                   name: common-config
 ---
 apiVersion: v1
