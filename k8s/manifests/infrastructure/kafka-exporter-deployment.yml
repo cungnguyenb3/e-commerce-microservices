@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-exporter
+  template:
+    metadata:
+      labels:
+        app: kafka-exporter
+    spec:
+      containers:
+        - name: kafka-exporter
+          image: danielqsj/kafka-exporter:latest
+          ports:
+            - containerPort: 9308
+          env:
+            - name: KAFKA_SERVER
+              valueFrom:
+                configMapKeyRef:
+                  key: KAFKA_SERVER
+                  name: kafka-config
+          args:
+            - "--kafka.server=$(KAFKA_SERVER)"
+            - "--log.level=info"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-exporter
+spec:
+  selector:
+    app: kafka-exporter
+  ports:
+    - protocol: TCP
+      port: 9308
+      targetPort: 9308
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-server-config
+data:
+  KAFKA_SERVER: "broker:29092"
